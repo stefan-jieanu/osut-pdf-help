@@ -32,13 +32,16 @@ server.get('/', (req, res) => {
         console.log('running script');
     });
 
+    python_script.stderr.on('data', (data) => {
+        console.log('python error: ', data.toString());
+    });
+
     // close event to make sure sure the child process is closed
     python_script.on('close', (code) => {
         console.log('Python closed with code: ', code);
         console.log(python_output);
     });
 
-    // send the python output to the browser
     //res.send(python_output);
 
     res.sendFile(path.join(__dirname, '/html/index.html'));
