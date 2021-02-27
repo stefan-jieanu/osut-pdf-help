@@ -1,8 +1,12 @@
 const express = require('express');
+const path = require('path');
 const {spawn} = require('child_process');   
 const server = express();
 
 const port = 3000;
+
+// serve the static files
+server.use('/static', express.static(path.join(__dirname, '/public')));
 
 server.get('/', (req, res) => {
     let python_output;
@@ -23,7 +27,9 @@ server.get('/', (req, res) => {
     });
 
     // send the python output to the browser
-    res.send(python_output);
+    //res.send(python_output);
+
+    res.sendFile(path.join(__dirname, '/html/index.html'));
 });
 
 server.listen(port, () => {
