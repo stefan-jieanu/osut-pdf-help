@@ -25,11 +25,43 @@ server.get('/', (req, res) => {
 });
 
 server.get('/get-all', (req, res) => {
-
     let python_output;
 
     // spawn a process to run the python script
-    const python_script = spawn('python', ['example.py']);
+    const python_script = spawn('python');
+
+    // collect the data from script
+    python_script.stdout.on('data', (data) => {
+        python_output = data.toString();
+        console.log(data.toString());
+    });
+
+    python_script.stderr.on('data', (data) => {
+        console.log('python error: ', data.toString());
+    });
+
+    // close event to make sure sure the child process is closed
+    python_script.on('close', (code) => {
+        console.log('Python closed with code: ', code);
+
+        let output = {
+            files: []
+        }
+        
+        let f_out = python_output.split('#');
+        f_out.forEach(element => {
+            output.files.push(element);
+        });
+
+        res.send(output);
+    });
+});
+
+server.post('/get/:keywords', (req, res) => {
+    let python_output;
+    
+    // spawn a process to run the python script
+    const python_script = spawn('python', ['example.py', req.params["keywords"]]);
 
     // collect the data from script
     python_script.stdout.on('data', (data) => {
