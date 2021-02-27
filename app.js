@@ -21,6 +21,11 @@ const storage = multer.diskStorage({
 });
 
 server.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/html/index.html'));
+});
+
+server.get('/get-all', (req, res) => {
+
     let python_output;
 
     // spawn a process to run the python script
@@ -29,7 +34,7 @@ server.get('/', (req, res) => {
     // collect the data from script
     python_script.stdout.on('data', (data) => {
         python_output = data.toString();
-        console.log('running script');
+        console.log(data.toString());
     });
 
     python_script.stderr.on('data', (data) => {
@@ -39,12 +44,8 @@ server.get('/', (req, res) => {
     // close event to make sure sure the child process is closed
     python_script.on('close', (code) => {
         console.log('Python closed with code: ', code);
-        console.log(python_output);
+        res.send(python_output);
     });
-
-    //res.send(python_output);
-
-    res.sendFile(path.join(__dirname, '/html/index.html'));
 });
 
 const upload = multer({storage: storage});
