@@ -12,5 +12,15 @@
 </head>
 <body>
     <h1>Hello to pdf view</h1>
+
+    <form method="POST" action="http://localhost:3000/upload-pdf" enctype="multipart/form-data">
+        <div>
+            <label>Select file</label>
+            <input type="file" name="pdf-upload">
+        </div>
+        <div>
+            <input type="submit" name="pdf-upload" value="Upload"/>
+        </div>
+    </form>
 </body>
 </html>

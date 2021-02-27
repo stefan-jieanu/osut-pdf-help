@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
+
 const {spawn} = require('child_process');   
 const server = express();
 
@@ -7,6 +9,16 @@ const port = 3000;
 
 // serve the static files
 server.use('/static', express.static(path.join(__dirname, '/public')));
+
+// defining the storage for multer
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/uploads/');
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
 
 server.get('/', (req, res) => {
     let python_output;
@@ -30,6 +42,15 @@ server.get('/', (req, res) => {
     //res.send(python_output);
 
     res.sendFile(path.join(__dirname, '/html/index.html'));
+});
+
+const upload = multer({storage: storage});
+
+server.post('/upload-pdf', upload.single('pdf-upload'), (req, res) => {
+    if (!req.file) {
+        res.send('No file :(');
+    }
+    res.redirect('/');
 });
 
 server.listen(port, () => {
