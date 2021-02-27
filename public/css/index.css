@@ -9,7 +9,7 @@ body {
 }
 
 .search-form-input {
-    width: 400px;
+    width: 380px;
     visibility: hidden; 
 }
 
@@ -41,6 +41,21 @@ body {
     text-decoration: none;
     color: #2e2e2e;
     margin-left: 30px;
+}
+
+.favorites-card {
+    width: 400px;
+    margin-left: 20px;
+    margin-top: 29px;
+    color: #2e2e2e;
+}
+
+.add-new-file-card {
+    width: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 29px;
+    color: #2e2e2e;
 }
 
 #loading-animation {

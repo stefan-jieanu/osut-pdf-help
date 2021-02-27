@@ -15,11 +15,11 @@
     <title>PDF Help</title>
 </head>
 <body>
-    <h1>Hello to pdf view</h1>
+    <!-- <h1>Hello to pdf view</h1> -->
 
-    <button type="button" onclick="loadPDFNames()">Print pdfs</button>
+    <!-- <button type="button" onclick="loadPDFNames()">Print pdfs</button> -->
 
-    <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
+    <!-- <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
         <div>
             <label>Select file</label>
             <input type="file" name="pdf-upload">
@@ -27,13 +27,37 @@
         <div>
             <input type="submit" name="pdf-upload" value="Upload"/>
         </div>
-    </form>
+    </form> -->
 
     <div class="container">
         <div class="row justify-content-center">
-            <div id="col-sm-2">
+            <h1>This is the awesome title!</h1>
+        </div>
+
+        <div class="row justify-content-center">
+            <div id="col-md-4">
+                <div class="card add-new-file-card">
+                    <h5 class="card-header">Adauga
+                        <img src="http://25.64.181.255:3000/static/images/files.svg" alt="" style="height: 30px;">
+                    </h5>
+                    <div class="card-body">
+                        <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <!-- <span class="input-group-text">Upload</span> -->
+                                  <input type="submit" class="input-group-text" value="Upload" style="width: 100px;">
+                                </div>
+                                <div class="custom-file">
+                                  <input type="file" class="pdf-upload" id="inputGroupFile01" name="pdf-upload">
+                                  <label class="custom-file-label" for="inputGroupFile01"></label>
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div id="col-sm-8">
+
+            <div id="col-md-4">
                 <form action="">
                     <input type="text" placeholder="Cauta"  class="search-form-input">
                 </form>
@@ -48,11 +72,31 @@
                 </div>
 
             </div>
-            <div id="col-sm-2">
+
+            <div id="col-md-4">
+                <div class="card favorites-card">
+                    <h5 class="card-header">Most accessed
+                        <img src="http://25.64.181.255:3000/static/images/favorites.svg" alt="" style="height: 30px;">
+                    </h5>
+                    <div class="card-body" style="padding: 10px;">
+                      <p class="card-title">
+                        <div class="search-result">
+                            <span>
+                                <img src="http://25.64.181.255:3000/static/images/files.svg">
+                            </span>
+                            <a href="http://25.64.181.255:3000/static/uploads/ROF OSUT-mai-2019.pdf">ROF OSUT-mai-2019.pdf</a>
+                            <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
+                        </div> 
+                      </p>
+                    </div>
+                  </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div id="col-sm-12">
+            <div id="col-sm-4" style="width: 400px;">
+            </div>
+            
+            <div id="col-sm-4">
                 <div class="search-result-container" style="width: 400px;">
                     <!-- <div class="search-result">
                         <span>
@@ -62,6 +106,10 @@
                         <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
                     </div> -->
                 </div>
+            </div>
+
+            <div id="col-sm-4">
+
             </div>
         </div>
         <div class="row justify-content-center">
