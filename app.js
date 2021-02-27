@@ -76,7 +76,22 @@ server.post('/get/:keywords', (req, res) => {
     // close event to make sure sure the child process is closed
     python_script.on('close', (code) => {
         console.log('Python closed with code: ', code);
-        res.send(python_output);
+
+        let output = {
+            file_links: [],
+            file_names: []
+        }
+
+        if (python_output) {
+            let f_out = python_output.split('#');
+            f_out.forEach(element => {
+                output.file_names.push(element);
+                output.file_links.push('http://25.64.181.255:3000/static/uploads/' + element);
+            });
+
+            res.send(output);
+        }
+        else res.send('');
     });
 });
 

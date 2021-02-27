@@ -70,7 +70,6 @@ def main(argv, argc):
         resultTxt = convert_pdf_to_text(file_name, pages=None)
 
         if checkStringInPDF(resultTxt, inputString) == 'succes':
-            # resultPDFs = resultPDFs+file_name+'#';
             print(file_name + "#", end="");
     
 

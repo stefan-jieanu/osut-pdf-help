@@ -19,10 +19,6 @@
 
     <button type="button" onclick="loadPDFNames()">Print pdfs</button>
 
-    <div id="pdf-container">
-        
-    </div>
-
     <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
         <div>
             <label>Select file</label>
@@ -35,42 +31,47 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div id="col-sm-12">
+            <div id="col-sm-2">
+            </div>
+            <div id="col-sm-8">
                 <form action="">
-                    <input type="text" placeholder="Cauta" id="search-bar" style="border-radius: 5px;">
-                    <button id="search-button" style="background-color: white; width: 50px; border-radius: 5px;" onclick="search_keyword()">
-                        &nbsp;
-                    </button>
+                    <input type="text" placeholder="Cauta"  class="search-form-input">
                 </form>
+
+                <div class="input-group mb-3">
+                    <input id="search-bar" type="text" class="form-control" placeholder="Cauta" aria-label="Cauta" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span id="search-button" class="input-group-text" id="basic-addon2" style="background-color: white;">
+                            <img src="http://25.64.181.255:3000/static/images/search_icon.svg" style="height: 40px;">
+                      </span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="col-sm-2">
             </div>
         </div>
-    </div>
-
-    <div id="key-word">
-        <input type="text" id="key-word" name="key-word" value="Cuvânt cheie"><br>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div id="col-{breakpoint}-auto">
-                <button onclick="search_keyword()">Caută în documente</button>
-                
-                <script>
-                    function search_keyword(){
-                        
-                    }
-                    </script>
-                    
-                <button onclick="favorites()">Favorite</button>
-                
-                <script>
-                    function favorites(){
-                        
-                    }
-                    </script>
-                    
+        <div class="row justify-content-center">
+            <div id="col-sm-12">
+                <div class="search-result-container" style="width: 400px;">
+                    <!-- <div class="search-result">
+                        <span>
+                            <img src="http://25.64.181.255:3000/static/images/files.svg">
+                        </span>
+                        <a href="http://25.64.181.255:3000/static/uploads/ROF OSUT-mai-2019.pdf">ROF OSUT-mai-2019.pdf</a>
+                        <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
+                    </div> -->
+                </div>
             </div>
-
+        </div>
+        <div class="row justify-content-center">
+            <div id="col-sm-12">
+                <div style="width: 400px;">
+                    <div id="loading-animation" style="text-align: center;">
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
