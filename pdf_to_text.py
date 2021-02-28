@@ -51,26 +51,17 @@ def convert_pdf_to_text(fname, pages=None):
     converter.close()
     text = output.getvalue()
     output.close
-    return text
-
-def checkStringInPDF(pdf_text, inputString):
-    if inputString in pdf_text:
-       return 'succes'
-
-    return 'fail'
+    # print(text.encode('unicode'))
+    # print(text)
+    print('Preşedinte')
 
 def main(argv, argc):
-    inputString = argv[1]
-
     os.chdir('E:/spacehack/osut-pdf-help/public/uploads')
 
-    resultPDFs = '';
-    list_of_files = glob.glob('*.pdf')           # create the list of file
-    for file_name in list_of_files:
-        resultTxt = convert_pdf_to_text(file_name, pages=None)
-
-        if checkStringInPDF(resultTxt, inputString) == 'succes':
-            print(file_name + "#", end="");
+    # resultPDFs = '';
+    # list_of_files = glob.glob(argv[0])          
+    # for file_name in list_of_files:
+    convert_pdf_to_text(argv[1], pages=None)
     
 
 if __name__ == "__main__":

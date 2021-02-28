@@ -19,15 +19,16 @@ $('#search-button').click(event => {
     $.post("http://25.64.181.255:3000/get/" + keywords, data => {
         if (data) {
         $('#loading-animation').css('visibility', 'hidden');
+        console.log(data);
 
-            for (let i = 0; i < data.file_names.length - 1; i++) {
+            for (let i = 0; i < data.file_names.length; i++) {
                 $('.search-result-container').append(
                     `
                     <div class="search-result">
                         <span>
                             <img src="http://25.64.181.255:3000/static/images/files.svg">
                         </span>
-                        <a href="http://25.64.181.255:3000/static/uploads/ROF OSUT-mai-2019.pdf">ROF OSUT-mai-2019.pdf</a>
+                        <a href="${data.file_links[i]}">${data.file_names[i]}</a>
                         <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
                     </div>
                     `
