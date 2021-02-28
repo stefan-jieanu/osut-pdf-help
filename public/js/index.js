@@ -18,8 +18,8 @@ $('#search-button').click(event => {
 
     $.post("http://25.64.181.255:3000/get/" + keywords, data => {
         if (data) {
-        $('#loading-animation').css('visibility', 'hidden');
-        console.log(data);
+            $('#loading-animation').css('visibility', 'hidden');
+            console.log(data);
 
             for (let i = 0; i < data.file_names.length; i++) {
                 $('.search-result-container').append(
@@ -34,6 +34,17 @@ $('#search-button').click(event => {
                     `
                 );
             }
+        }
+        else {
+            $('#loading-animation').css('visibility', 'hidden');
+
+            $('.search-result-container').append(
+                `
+                <div class="search-result">
+                    <p>&nbsp;&nbsp;Nu am gasit nimic :(</p>
+                </div>
+                `
+            );
         }
     });
 });

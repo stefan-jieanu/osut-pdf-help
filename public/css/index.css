@@ -5,11 +5,11 @@ body {
 }
 
 .search-bar {
-    width: 400px; 
+    width: 600px; 
 }
 
 .search-form-input {
-    width: 380px;
+    width: 600px;
     visibility: hidden; 
 }
 
@@ -44,14 +44,14 @@ body {
 }
 
 .favorites-card {
-    width: 400px;
-    margin-left: 20px;
+    width: 600px;
+    /* margin-left: 20px; */
     margin-top: 29px;
     color: #2e2e2e;
 }
 
 .add-new-file-card {
-    width: 250px;
+    width: 600px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 29px;

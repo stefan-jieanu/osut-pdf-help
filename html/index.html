@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-4">
                 <h1>
-                    <img src="http://25.64.181.255:3000/static/images/Logo_OSUT_alb.png" alt="" style="height: 150px; margin-top: 50px; margin-left: -20px;">
+                    <img src="http://25.64.181.255:3000/static/images/Logo_OSUT_alb.png" alt="" style="height: 150px; margin-top: 50px; margin-left: 20px;">
                 </h1>
             </div>
             <div class="col-md-4">
@@ -45,8 +45,8 @@
         </div>
 
         <div class="row justify-content-center">
-            <div id="col-md-4">
-                <div class="card add-new-file-card">
+            <div id="col-md-2">
+                <!-- <div class="card add-new-file-card">
                     <h5 class="card-header">Adauga
                         <img src="http://25.64.181.255:3000/static/images/files.svg" alt="" style="height: 30px;">
                     </h5>
@@ -54,7 +54,7 @@
                         <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                  <!-- <span class="input-group-text">Upload</span> -->
+                                  <span class="input-group-text">Upload</span> 
                                   <input type="submit" class="input-group-text" value="Upload" style="width: 100px;">
                                 </div>
                                 <div class="custom-file">
@@ -64,16 +64,16 @@
                               </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
 
-            <div id="col-md-4">
+            <div id="col-md-8">
                 <form action="">
                     <input type="text" placeholder="Cauta"  class="search-form-input">
                 </form>
 
                 <div class="input-group mb-3">
-                    <input id="search-bar" type="text" class="form-control" placeholder="Cauta" aria-label="Cauta" aria-describedby="basic-addon2">
+                    <input id="search-bar" type="text" class="form-control" placeholder="Caută" aria-label="Cauta" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <span id="search-button" class="input-group-text" id="basic-addon2" style="background-color: white;">
                             <img src="http://25.64.181.255:3000/static/images/search_icon.svg" style="height: 40px;">
@@ -83,9 +83,46 @@
 
             </div>
 
-            <div id="col-md-4">
+            <div id="col-md-2">
+                
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="col-sm-2">
+            </div>
+            
+            <div id="col-sm-8">
+                <div class="search-result-container" style="width: 600px; ">
+                    <!-- <div class="search-result">
+                        <span>
+                            <img src="http://25.64.181.255:3000/static/images/files.svg">
+                        </span>
+                        <a href="http://25.64.181.255:3000/static/uploads/ROF OSUT-mai-2019.pdf">ROF OSUT-mai-2019.pdf</a>
+                        <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
+                    </div> -->
+                </div>
+            </div>
+
+            <div id="col-sm-2">
+
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="col-sm-12">
+                <div style="width: 400px;">
+                    <div id="loading-animation" style="text-align: center;">
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="col-md-2">
+
+            </div>
+            <div id="col-md-8">
                 <div class="card favorites-card">
-                    <h5 class="card-header">Most accessed
+                    <h5 class="card-header">Cele mai accesate
                         <img src="http://25.64.181.255:3000/static/images/favorites.svg" alt="" style="height: 30px;">
                     </h5>
                     <div class="card-body" style="padding: 10px;">
@@ -99,36 +136,40 @@
                         </div> 
                       </p>
                     </div>
-                  </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div id="col-sm-4">
-            </div>
-            
-            <div id="col-sm-4">
-                <div class="search-result-container" style="width: 400px; margin">
-                    <!-- <div class="search-result">
-                        <span>
-                            <img src="http://25.64.181.255:3000/static/images/files.svg">
-                        </span>
-                        <a href="http://25.64.181.255:3000/static/uploads/ROF OSUT-mai-2019.pdf">ROF OSUT-mai-2019.pdf</a>
-                        <p>&nbsp;&nbsp;Lorem ipsum doloroem etul um epsolo dol</p>
-                    </div> -->
                 </div>
             </div>
-
-            <div id="col-sm-4">
+            <div id="col-md-2">
 
             </div>
         </div>
+
         <div class="row justify-content-center">
-            <div id="col-sm-12">
-                <div style="width: 400px;">
-                    <div id="loading-animation" style="text-align: center;">
-                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <div id="col-md-2">
+
+            </div>
+            <div id="col-md-8">
+                <div class="card add-new-file-card">
+                    <h5 class="card-header">Adaugă
+                        <img src="http://25.64.181.255:3000/static/images/files.svg" alt="" style="height: 30px;">
+                    </h5>
+                    <div class="card-body">
+                        <form method="POST" action="http://25.64.181.255:3000/upload-pdf" enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <!-- <span class="input-group-text">Upload</span>  -->
+                                  <input type="submit" class="input-group-text" value="Upload" style="width: 100px;">
+                                </div>
+                                <div class="custom-file">
+                                  <input type="file" class="pdf-upload" id="inputGroupFile01" name="pdf-upload" multiple>
+                                  <label class="custom-file-label" for="inputGroupFile01"></label>
+                                </div>
+                              </div>
+                        </form>
                     </div>
                 </div>
+            </div>
+            <div id="col-md-2">
+
             </div>
         </div>
     </div>
